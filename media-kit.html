@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Kit Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Media Kit Generator</h1>
+    
+    <!-- Logo Upload -->
+    <div class="input-group">
+      <label for="logoUpload">Upload Your Logo:</label>
+      <input type="file" id="logoUpload" accept="image/*">
+    </div>
+
+    <!-- Stand Number Input -->
+    <div class="input-group">
+      <label for="standNumber">Enter Your Stand Number:</label>
+      <input type="text" id="standNumber" placeholder="e.g., 7.2 H. 147" maxlength="8">
+    </div>
+
+    <!-- Submit Button -->
+    <button id="submitButton">Generate Media Kit</button>
+
+    <!-- Preview Section -->
+    <div class="preview">
+      <h2>Preview</h2>
+      <div class="preview-design">
+        <canvas id="previewCanvas" width="1080" height="1060"></canvas>
+      </div>
+    </div>
+
+    <!-- Generated Images Section -->
+    <div class="generated-images" style="display: none;">
+      <h2>Download Your Media Kit</h2>
+      <div class="images-container">
+        <!-- Placeholder for generated images -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
