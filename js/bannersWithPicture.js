@@ -6,7 +6,13 @@ import { createTitleSocialsContainer, createDownloadButton } from './utils.js';
 export const generatePictures = async (croppedImg, standLetter, standNumber) => {
   const generatedImages = [];
   const scaleFactor = 2;
-
+  
+  try {
+    await document.fonts.load(format.font);
+  } catch (err) {
+    console.error('Font failed to load:', err);
+  }
+  
   for (const picture of FORMATS_BANNERS_WITH_PICTURES) {
     const [originalWidth, originalHeight] = picture.dimensions;
     const scaledWidth = originalWidth * scaleFactor;
