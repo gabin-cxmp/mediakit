@@ -8,7 +8,8 @@ export const generatePictures = async (croppedImg, standLetter, standNumber) => 
   const scaleFactor = 2;
   
   try {
-    await document.fonts.load(format.font);
+    // Ensure the font is loaded before proceeding
+    await document.fonts.ready;
   } catch (err) {
     console.error('Font failed to load:', err);
   }
