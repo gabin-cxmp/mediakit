@@ -140,7 +140,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     picturePosition: [1280.58, 636.1], 
     standLetterPosition: [1537.8, 605.2], 
     pictureSize: [435.21, 381.75], 
-    font: '52px CA Mechano'
+    font: '52'
    },
   { 
     nameEN: 'Landscape format', 
@@ -153,7 +153,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     picturePosition: [1280.58, 636.1], 
     standLetterPosition: [1537.8, 605.2], 
     pictureSize: [435.21, 381.75], 
-    font: '52px CA Mechano'
+    font: '52'
    },
   { 
     nameEN: 'Story format', 
@@ -166,7 +166,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     picturePosition: [183.86, 277.46], 
     standLetterPosition: [424.61, 142.89], 
     pictureSize: [473.5, 415.34], 
-    font: '52px CA Mechano'
+    font: '52'
    }
 ]
 
