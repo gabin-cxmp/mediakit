@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Kit powered by WSN</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="croppie.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="title-wrapper">
+        <img src="assets/logos/logo-wsn.svg" class="wsn-logo"/>
+        <p class="title_description">media kit</p>
+      </div>
+      <div id="switch-lang">
+        <a title="fr" class="lang_link" href="../mediakit/index_fr">FR</a>
+        <a title="en" class="lang_link" href="../mediakit/">EN</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="section">
+      <h1>Let everyone know you're coming!</h1>
+      <p class="label-description">Create customized banners with your logo and stand number</p>
+    </div>
+    <div class="tab-container">
+      <div class="tabs">
+        <button class="tab-button active" data-tab="customized-banners">Customized banners</button>
+        <button class="tab-button" data-tab="generic-banners_wrapper">Generic banners</button>
+        <button class="tab-button" data-tab="pic-banners">Banners with picture</button>
+        <button class="tab-button" data-tab="tradeshow-logos">Logos</button>
+      </div>
+      <div class="tab-content">
+        <div id="customized-banners" class="tab-pane active">
+          <div class="container-border">
+            <div class="section form-and-preview_container">
+              <div class="form_wrapper">
+                <!-- Stand Number Input -->
+                <div class="input-group">
+                  <label for="standNumber">Enter Your Stand Number</label>
+                  <p class="label-description">Enter your stand references below.</p>
+                  <div class="inputs_wrapper">
+                    <div class="input_wrapper">
+                      <p>Stand Letter: </p>
+                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetter" placeholder="T" maxlength="1">
+                    </div>
+                    <div class="input_wrapper">
+                      <p>Stand Number: </p>
+                      <input type="number" id="standNumber" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Logo Upload -->
+                <div class="input-group">
+                  <label for="logoUpload">Upload Your Logo</label>
+                  <p class="label-description">Upload your logo (png, jpeg, jpg) then click on the “Create your banners” button.</p>
+                  <div class="input_wrapper">
+                    <div class="image-input-container">
+                      <input type="file" id="logoUpload" accept="image/*">
+                      <label for="logoUpload" class="custom-file-button">+</label>
+                      <span class="file-name">(No file chosen)</span>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Submit Button -->
+                <button id="submitButton">Create your banners</button>
+              </div>
+              <!-- Preview Section -->
+              <div class="preview">
+                <h2>Banner example:</h2>
+                <div class="preview-design"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Generated Images Section -->
+          <div class="section generated-images" style="display: none;">
+            <h2>Download Your Media Kit</h2>
+            <ul class="images-container">
+              <!-- Placeholder for generated images -->
+            </ul>
+            <button id="downloadAllButton" class="download-button">Download All</button>
+          </div>
+        </div>
+        <div id="generic-banners_wrapper" class="tab-pane">
+          <div class="container-border">
+            <div class="section generated-images">
+              <ul class="images-container">
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Square format</h3>
+                      <p>(1080x1080)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/instagram.svg" alt="instagram">
+                      <img src="assets/socials/facebook.svg" alt="facebook">
+                      <img src="assets/socials/x.svg" alt="x">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/square-template.png" alt="PC25 Square Format" class="generic-banners">
+                    <a href="assets/generic-banners/square-template.png" download="PC25-Square-Format.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Story format</h3>
+                      <p>(1080x1920)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/instagram.svg" alt="instagram">
+                      <img src="assets/socials/facebook.svg" alt="facebook">
+                      <img src="assets/socials/tiktok.svg" alt="tiktok">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/story-template.png" alt="PC25 Story Format" class="generic-banners">
+                    <a href="assets/generic-banners/story-template.png" download="PC25-Story-Format.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Portrait format</h3>
+                      <p>(1080x1350)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/instagram.svg" alt="instagram">
+                      <img src="assets/socials/facebook.svg" alt="facebook">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/portrait-template.png" alt="PC25 Portrait Format" class="generic-banners">
+                    <a href="assets/generic-banners/portrait-template.png" download="PC25-Portrait-Format.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>LinkedIn Banner</h3>
+                      <p>(1584x396)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/linkedin.svg" alt="linkedin">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/linkedin-template.png" alt="PC25 Linkedin banner" class="generic-banners">
+                    <a href="assets/generic-banners/linkedin-template.png" download="PC25-Linedkin-Banner.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Email signature</h3>
+                      <p>(600x140)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/mail.svg" alt="email">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/email-signature-template.png" alt="PC25 Email Signature banner" class="generic-banners">
+                    <a href="assets/generic-banners/email-signature-template.png" download="PC25-Email-Signature.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Small Banner</h3>
+                      <p>(300x250)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/meta.svg" alt="meta">
+                      <img src="assets/socials/google-ads.svg" alt="google ads">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/small-banner-template.png" alt="PC25 Small Banner" class="generic-banners">
+                    <a href="assets/generic-banners/small-banner-template.png" download="PC25-Small-Banner.png" class="download-button-small">Download</a>
+                </li>
+                <li class="image-container">
+                  <div class="image-title-socials-container">
+                    <div class="image-title-container">
+                      <h3>Landscape Banner</h3>
+                      <p>(1200x628)</p>
+                    </div>
+                    <div class="image-socials-container">
+                      <img src="assets/socials/instagram.svg" alt="instagram">
+                      <img src="assets/socials/facebook.svg" alt="facebook">
+                      <img src="assets/socials/x.svg" alt="x">
+                    </div>
+                  </div>
+                    <img src="assets/generic-banners/landscape-template.png" alt="PC25 Landscape Banner" class="generic-banners">
+                    <a href="assets/generic-banners/landscape-template.png" download="PC25-Landscape-Banner.png" class="download-button-small">Download</a>
+                </li>
+              </ul>
+              <button class="download-buttons" id="generic-downloadAll">Download All</button>
+            </div>
+          </div>
+        </div>
+        <div id="pic-banners" class="tab-pane">
+          <div class="container-border">
+            <div class="section form-and-preview_container">
+              <div class="form_wrapper">
+                <!-- Stand Number Input -->
+                <div class="input-group">
+                  <label for="standNumberPictures">Enter Your Stand Number</label>
+                  <p class="label-description">Enter your stand references below.</p>
+                  <div class="inputs_wrapper">
+                    <div class="input_wrapper">
+                      <p>Stand Letter: </p>
+                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetterPictures" placeholder="T" maxlength="1">
+                    </div>
+                    <div class="input_wrapper">
+                      <p>Stand Number: </p>
+                      <input type="number" id="standNumberPictures" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Logo Upload -->
+                <div class="input-group">
+                  <label for="pictureUpload">Upload Your Picture</label>
+                  <p class="label-description">Upload your picture (png, jpeg, jpg) then click on the “Create your banners” button.</p>
+                  <div class="input_wrapper_croppie">
+                    <div class="image-input-container">
+                      <input type="file" id="pictureUpload" accept="image/*">
+                      <label for="pictureUpload" class="custom-file-button">+</label>
+                      <span class="file-name-pictures">(No file chosen)</span>
+                    </div>
+                    <div id="croppie-container"></div>
+                  </div>
+                </div>
+      
+                <!-- Submit Button -->
+                <button id="submitButtonPictures">Create your banners</button>
+              </div>
+              <!-- Preview Section -->
+              <div class="preview">
+                <h2>Banner example:</h2>
+                <div class="preview-design-pictures"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Generated Images Section -->
+          <div class="section generated-pictures" style="display: none;">
+            <h2>Download Your Media Kit</h2>
+            <ul class="pictures-container">
+              <!-- Placeholder for generated images -->
+            </ul>
+            <button id="downloadAllPicturesButton" class="download-button">Download All</button>
+          </div>
+        </div>
+        <div id="tradeshow-logos" class="tab-pane">
+          <div class="container-border">
+            <div class="section logos_wrapper">
+              <div class='logo-picture_wrapper'>
+                <img src="assets/logos/premiere-classe-logo.png" alt="Premiere Classe Logo" class="tradeshow-logo-picture"/>
+              </div>
+              <p class="label-description">Download the logo of Premiere Class in PNG and SVG.</p>
+              <button class="download-buttons" id="downloadAllLogos">Download Logos</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/croppie.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
