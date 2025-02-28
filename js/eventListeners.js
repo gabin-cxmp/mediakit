@@ -179,5 +179,28 @@ document.addEventListener('click', (event) => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Sélectionnez le formulaire
+  const form = document.querySelector('.stand-number-form'); // Adaptez le sélecteur si nécessaire
+
+  // Ajoutez un écouteur d'événement pour le submit
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    // Récupérez la valeur de l'input de type number
+    const standNumberInput = document.getElementById('standNumber').value;
+
+    // Envoyez les données à GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'formSubmit', // Nom de l'événement
+      standNumberInput: standNumberInput // Valeur de l'input
+    });
+
+    // Soumettez le formulaire si nécessaire
+    // form.submit();
+  });
+});
+
 
   
