@@ -176,7 +176,6 @@ document.addEventListener('click', (event) => {
       buttonId: buttonId
     });
 
-    console.log('Event sent to GTM:', { event: 'downloadButtonClick', buttonId });
   }
 });
 
