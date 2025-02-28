@@ -50,7 +50,7 @@ export const generateImage = async (format, logoImg, /*standLetter,*/ standNumbe
   
     const imageContainer = createElement('li', { className: 'image-container' });
     const titleSocialsContainer = createTitleSocialsContainer(document.documentElement.lang === 'en' ? format.nameEN : format.nameFR, format.description, format.socials);
-    imageContainer.append(titleSocialsContainer, imgElement, createDownloadButton(imageURL, document.documentElement.lang === 'en' ? `${infoEvent.abreviation} ${format.nameEN}.png` : `${infoEvent.abreviation} ${format.nameFR}.png` ));
+    imageContainer.append(titleSocialsContainer, imgElement, createDownloadButton(imageURL, document.documentElement.lang === 'en' ? `${infoEvent.abreviation} ${format.nameEN}.png` : `${infoEvent.abreviation} ${format.nameFR}.png`, format.dataId));
     dom.imagesContainer.appendChild(imageContainer);
   
     return { imageURL, fileName: document.documentElement.lang === 'en' ? `${infoEvent.abreviation} ${format.nameEN}.png` : `${infoEvent.abreviation} ${format.nameFR}.png` };
