@@ -159,4 +159,26 @@ dom.submitButtonPictures.addEventListener('click', async () => {
   dom.downloadAllPicturesButton.onclick = () => downloadAllPictures(imageData);
 });
 
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-button-id]');
+  if (button) {
+    const buttonId = button.getAttribute('data-button-id');
+    
+    // Optional: prevent navigation for <a> tags if needed
+    if (button.tagName === 'A' && !button.hasAttribute('download')) {
+      event.preventDefault(); 
+    }
+    
+    // Send event to GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'downloadButtonClick',
+      buttonId: buttonId
+    });
+
+    console.log('Event sent to GTM:', { event: 'downloadButtonClick', buttonId });
+  }
+});
+
+
   
