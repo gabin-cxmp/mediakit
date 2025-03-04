@@ -180,23 +180,27 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Sélectionnez le bouton "Submit" (ou l'élément déclencheur)
-  const submitButton = document.getElementById('submitButton'); // Remplacez par l'ID ou le sélecteur de votre bouton
+  const submitButton = document.getElementById('submitButton');
 
-  // Ajoutez un écouteur d'événement pour le clic
   submitButton.addEventListener('click', () => {
-    // Récupérez la valeur de l'input de type number
-    const standNumberInput = document.getElementById('standNumber').value;
+    const standNumberElement = document.getElementById('standNumber');
+    const standNumberInput = standNumberElement ? standNumberElement.value : null;
 
-    // Envoyez les données à GTM
+    const standNumberValue = standNumberInput ? standNumberInput : 'stand number not set';
+
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'standNumberSubmit', // Nom de l'événement
-      standNumberInput: standNumberInput // Valeur de l'input
+      event: 'standNumberSubmit',
+      standNumberInput: standNumberValue
     });
 
+    console.log('Pushed to dataLayer:', {
+      event: 'standNumberSubmit',
+      standNumberInput: standNumberValue
+    });
   });
 });
+
 
 
   
