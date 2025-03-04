@@ -193,11 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
       event: 'standNumberSubmit',
       standNumberInput: standNumberValue
     });
-
-    console.log('Pushed to dataLayer:', {
-      event: 'standNumberSubmit',
-      standNumberInput: standNumberValue
-    });
   });
 });
 
