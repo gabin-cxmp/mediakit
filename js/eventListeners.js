@@ -188,6 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const standNumberValue = standNumberInput ? standNumberInput : 'stand number not set';
 
+      console.log('Événement envoyé au dataLayer :', {
+      event: 'standNumberSubmit',
+      standNumberInput: standNumberValue
+    });
+      
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'standNumberSubmit',
