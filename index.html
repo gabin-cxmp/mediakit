@@ -61,13 +61,13 @@
                   <label for="standNumber">Enter Your Stand Number</label>
                   <p class="label-description">Enter your stand references below.</p>
                   <div class="inputs_wrapper">
-                    <!--div class="input_wrapper">
-                      <p>Aisle Letter: </p>
-                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetter" placeholder="T" maxlength="1">
-                    </div-->
+                    <div class="input_wrapper">
+                      <p>Hall Number: </p>
+                      <input type="text" autocapitalize="on" value="1" id="hallNumber" placeholder="1" maxlength="1" disabled>
+                    </div>
                     <div class="input_wrapper">
                       <p>Stand Number: </p>
-                      <input type="number" id="standNumber" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                      <input type="text" id="standNumber" placeholder="A21" maxlength="7" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\/]/g, '').slice(0, 7);">
                     </div>
                   </div>
                 </div>
@@ -223,11 +223,11 @@
                   <div class="inputs_wrapper">
                     <div class="input_wrapper">
                       <p>Aisle Letter: </p>
-                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetterPictures" placeholder="T" maxlength="1">
+                      <input type="text" autocapitalize="on" value="1" id="hallNumberPictures" maxlength="1" disabled>
                     </div>
                     <div class="input_wrapper">
                       <p>Stand Number: </p>
-                      <input type="number" id="standNumberPictures" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                      <input type="number" id="standNumberPictures" placeholder="A21" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
                     </div>
                   </div>
                 </div>
