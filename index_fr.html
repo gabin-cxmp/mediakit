@@ -60,13 +60,13 @@
                   <label for="standNumber">Saisissez votre numéro de stand</label>
                   <p class="label-description">Saisissez vos références de stand ci-dessous.</p>
                   <div class="inputs_wrapper">
-                    <!--div class="input_wrapper">
-                      <p>Lettre de l'allée : </p>
-                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetter" placeholder="T" maxlength="1">
-                    </div-->
+                    <div class="input_wrapper">
+                      <p>Numéro du hall : </p>
+                      <input type="text" autocapitalize="on" value="1" id="standLetter" placeholder="1" maxlength="1" disabled>
+                    </div>
                     <div class="input_wrapper">
                       <p>Numéro de stand : </p>
-                      <input type="number" id="standNumber" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                      <input type="text" id="standNumber" placeholder="A21" maxlength="7" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\/]/g, '').slice(0, 7);">
                     </div>
                   </div>
                 </div>
@@ -221,12 +221,12 @@
                   <p class="label-description">Saisissez les références de votre stand ci-dessous.</p>
                   <div class="inputs_wrapper">
                     <div class="input_wrapper">
-                      <p>Lettre de l'allée: </p>
-                      <input type="text" autocapitalize="on" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')" id="standLetterPictures" placeholder="T" maxlength="1">
+                      <p>Numéro du Hall: </p>
+                      <input type="text" autocapitalize="on" value="1" id="hallNumberPictures" maxlength="1" disabled>
                     </div>
                     <div class="input_wrapper">
                       <p>Numéro de stand: </p>
-                      <input type="number" id="standNumberPictures" placeholder="147" maxlength="4" min="1" max="999" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);">
+                      <input type="text" id="standNumberPictures" placeholder="A21s" maxlength="7" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9\/]/g, '').slice(0, 7);">
                     </div>
                   </div>
                 </div>
