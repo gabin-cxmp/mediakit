@@ -2,7 +2,7 @@
 
 export const dom = {
     logoUpload: document.getElementById('logoUpload'),
-    standLetterInput: document.getElementById('standLetter'),
+    hallNumberInput: document.getElementById('hallNumber'),
     standNumberInput: document.getElementById('standNumber'),
     generatedImagesSection: document.querySelector('.generated-images'),
     imagesContainer: document.querySelector('.images-container'),
@@ -15,7 +15,7 @@ export const dom = {
     generatePicturesSection : document.querySelector('.generated-pictures'),
     pictureUpload: document.getElementById('pictureUpload'),
     standNumberPictures: document.getElementById('standNumberPictures'),
-    standLetterPictures : document.getElementById('standLetterPictures'),
+    hallNumberPictures : document.getElementById('hallNumberPictures'),
     croppieContainer: document.getElementById('croppie-container'),
     picturesContainer: document.querySelector('.pictures-container'),
     downloadAllPicturesButton: document.getElementById('downloadAllPicturesButton'),
@@ -49,7 +49,7 @@ export const SOCIALS = [
       socials: ['instagram', 'facebook', 'x'], 
       dimensions: [1080, 1080], 
       logoCenter: [171.07, 1008], 
-      standLetterPosition: [711.27, 1037], 
+      standNumberPosition: [711.27, 1037], 
       maxLogoSize: [220, 124], 
       font: '88px CA Mechano' 
     },
@@ -63,7 +63,7 @@ export const SOCIALS = [
       socials: ['instagram', 'facebook', 'tiktok'], 
       dimensions: [1080, 1920], 
       logoCenter: [170.65, 1845], 
-      standLetterPosition: [711.27, 1874], 
+      standNumberPosition: [711.27, 1874], 
       maxLogoSize: [220, 124], 
       font: '88px CA Mechano' 
     },
@@ -77,7 +77,7 @@ export const SOCIALS = [
       socials: ['facebook', 'instagram'], 
       dimensions: [1080, 1350], 
       logoCenter: [170.74, 1276], 
-      standLetterPosition: [711.27, 1305], 
+      standNumberPosition: [711.27, 1305], 
       maxLogoSize: [220, 124], 
       font: '88px CA Mechano' 
     },
@@ -91,7 +91,7 @@ export const SOCIALS = [
       socials: ['linkedin'], 
       dimensions: [1584, 396], 
       logoCenter: [1479.5, 94.45], 
-      standLetterPosition: [1479.15, 333.98], 
+      standNumberPosition: [1479.15, 333.98], 
       maxLogoSize: [167, 124], 
       font: '62px CA Mechano'
      },
@@ -105,7 +105,7 @@ export const SOCIALS = [
       socials: ['mail'], 
       dimensions: [600, 140], 
       logoCenter: [563.06, 33.39], 
-      standLetterPosition: [562.96, 118.72], 
+      standNumberPosition: [562.96, 118.72], 
       maxLogoSize: [59.04, 43.84], 
       font: '22.6px CA Mechano'
      },
@@ -119,7 +119,7 @@ export const SOCIALS = [
       socials: ['google-ads', 'meta'], 
       dimensions: [300, 250], 
       logoCenter: [47.03, 229.44], 
-      standLetterPosition: [197.15, 237.28], 
+      standNumberPosition: [197.15, 237.28], 
       maxLogoSize: [60.83, 34.44], 
       font: '24.5px CA Mechano'
      },
@@ -133,7 +133,7 @@ export const SOCIALS = [
       socials: ['facebook', 'instagram', 'x'], 
       dimensions: [1200, 628], 
       logoCenter: [305.16, 567.98], 
-      standLetterPosition: [715.16, 591.05], 
+      standNumberPosition: [715.16, 591.05], 
       maxLogoSize: [177.63, 100.58], 
       font: '71.25px CA Mechano'
      }
@@ -149,7 +149,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     socials: ['instagram', 'facebook', 'x'], 
     dimensions: [1920, 1080], 
     picturePosition: [1280.58, 636.1], 
-    standLetterPosition: [1537.8, 605.2], 
+    standNumberPosition: [1537.8, 605.2], 
     pictureSize: [435.21, 381.75], 
     font: '52'
    },
@@ -162,7 +162,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     socials: ['instagram', 'facebook', 'x'], 
     dimensions: [1920, 1080], 
     picturePosition: [1280.58, 636.1], 
-    standLetterPosition: [1537.8, 605.2], 
+    standNumberPosition: [1537.8, 605.2], 
     pictureSize: [435.21, 381.75], 
     font: '52'
    },
@@ -175,7 +175,7 @@ export const FORMATS_BANNERS_WITH_PICTURES = [
     socials: ['instagram', 'facebook', 'tiktok'], 
     dimensions: [1080, 1350], 
     picturePosition: [183.86, 277.46], 
-    standLetterPosition: [424.61, 142.89], 
+    standNumberPosition: [424.61, 142.89], 
     pictureSize: [473.5, 415.34], 
     font: '52'
    }
