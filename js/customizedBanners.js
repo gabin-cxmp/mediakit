@@ -5,7 +5,7 @@ import { createElement } from "./utils.js";
 import { createTitleSocialsContainer } from "./utils.js";
 import { createDownloadButton } from "./utils.js";
 
-export const generateImage = async (format, logoImg, /*standLetter,*/ standNumber) => {
+export const generateImage = async (format, logoImg, hallNumber, standNumber) => {
     const scaleFactor = 2;
     const [originalWidth, originalHeight] = format.dimensions;
     const scaledWidth = originalWidth * scaleFactor;
@@ -39,7 +39,7 @@ export const generateImage = async (format, logoImg, /*standLetter,*/ standNumbe
     highResCtx.fillStyle = '#010000';
     highResCtx.font = `${parseInt(format.font) * scaleFactor}px CA Mechano`;
     highResCtx.textAlign = 'center';
-    highResCtx.fillText(format.nameEN === 'LinkedIn Banner' || format.nameEN === 'Email signature' ? standNumber : `BOOTH N. ${standNumber}`, format.standLetterPosition[0] * scaleFactor, format.standLetterPosition[1] * scaleFactor);
+    highResCtx.fillText(format.nameEN === 'LinkedIn Banner' || format.nameEN === 'Email signature' ? standNumber : `BOOTH N. ${standNumber}`, format.standNumberPosition[0] * scaleFactor, format.standNumberPosition[1] * scaleFactor);
   
     const finalCanvas = createElement('canvas', { width: originalWidth, height: originalHeight });
     const finalCtx = finalCanvas.getContext('2d');
