@@ -168,11 +168,6 @@ document.addEventListener('click', (event) => {
     if (button.tagName === 'A' && !button.hasAttribute('download')) {
       event.preventDefault(); 
     }
-
-            console.log('Événement envoyé au dataLayer :', {
-      event: 'downloadButtonClick',
-      buttonId: buttonId
-    });
     
     // Send event to GTM
     window.dataLayer = window.dataLayer || [];
