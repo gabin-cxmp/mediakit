@@ -168,6 +168,11 @@ document.addEventListener('click', (event) => {
     if (button.tagName === 'A' && !button.hasAttribute('download')) {
       event.preventDefault(); 
     }
+
+            console.log('Événement envoyé au dataLayer :', {
+      event: 'downloadButtonClick',
+      buttonId: buttonId
+    });
     
     // Send event to GTM
     window.dataLayer = window.dataLayer || [];
@@ -187,11 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const standNumberInput = standNumberElement ? standNumberElement.value : null;
 
     const standNumberValue = standNumberInput ? standNumberInput : 'stand number not set';
-
-      console.log('Événement envoyé au dataLayer :', {
-      event: 'standNumberSubmit',
-      standNumberInput: standNumberValue
-    });
       
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
