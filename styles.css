@@ -232,6 +232,11 @@ input[type="number"] {
   border-radius: 8px;
 }
 
+input:disabled{
+  background: #dfdfdf;
+  border-color: darkgrey;
+}
+
 input[type="text"], 
 input[type="number"]{
   max-width: 60px;
