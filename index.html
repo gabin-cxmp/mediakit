@@ -279,47 +279,6 @@
       </div>
     </div>
   </div>
-  <script>
-  function setCookie(name, value, days, domain) {
-  let expires = "";
-  if (days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-
-  // Définir le cookie avec le domaine exact et les attributs nécessaires
-  document.cookie = `${name}=${value}${expires}; path=/; domain=${domain}; SameSite=None; Secure`;
-}
-
-function checkAndSetCookie() {
-  const cookieName = "_ga_8FFVN49S4R";
-  const cookieValue = "GS1.1.1741882858.2.1.1741883073.0.0.0"; // Utilise la valeur actuelle du cookie
-  const domain = "gabin-cxmp.github.io"; // Domaine exact sans point au début
-  const expiresInDays = 365; // Durée de vie du cookie en jours
-
-  // Vérifie si le cookie existe déjà
-  const existingCookie = document.cookie
-    .split('; ')
-    .find(row => row.startsWith(`${cookieName}=`));
-
-  // Si le cookie n'existe pas ou est mal configuré, on le définit
-  if (!existingCookie) {
-    setCookie(cookieName, cookieValue, expiresInDays, domain);
-    console.log("Cookie défini avec succès :", cookieName);
-  } else {
-    console.log("Cookie déjà défini :", existingCookie);
-    // Si le cookie existe mais n'a pas l'attribut Secure, on le redéfinit
-    if (!existingCookie.includes("Secure")) {
-      setCookie(cookieName, cookieValue, expiresInDays, domain);
-      console.log("Cookie redéfini avec l'attribut Secure :", cookieName);
-    }
-  }
-}
-
-// Exécute la fonction au chargement de la page
-document.addEventListener('DOMContentLoaded', checkAndSetCookie);
-</script>
   <script src="js/croppie.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
