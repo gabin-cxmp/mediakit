@@ -235,6 +235,7 @@ input[type="number"] {
 input:disabled{
   background: #dfdfdf !important;
   border-color: darkgrey !important;
+  cursor: not-allowed !important;
 }
 
 input[type="text"], 
