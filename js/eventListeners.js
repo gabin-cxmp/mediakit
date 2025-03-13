@@ -19,12 +19,12 @@ dom.pictureUpload.addEventListener('change', () => {
 });
   
 dom.submitButton.addEventListener('click', async () => {
-    const { logoUpload, /*standLetterInput,*/ standNumberInput, generatedImagesSection, imagesContainer } = dom;
+    const { logoUpload, hallNumberInput, standNumberInput, generatedImagesSection, imagesContainer } = dom;
     const logoFile = logoUpload.files[0];
-    //const standLetter = standLetterInput.value;
+    const hallNumber = hallNumberInput.value;
     const standNumber = standNumberInput.value;
   
-    if (!logoFile || /*!standLetter ||*/ !standNumber) {
+    if (!logoFile || !hallNumber || !standNumber) {
       return alert(document.documentElement.lang === 'en' ? 'Please fill all fields.' : 'Veuillez remplir tous les champs.');
     }
   
@@ -37,7 +37,7 @@ dom.submitButton.addEventListener('click', async () => {
     logoImg.src = URL.createObjectURL(logoFile);
     await new Promise(resolve => logoImg.onload = resolve);
   
-    const imageData = await Promise.all(FORMATS_CUSTOMIZED_BANNERS.map(format => generateImage(format, logoImg, /*standLetter,*/ standNumber)));
+    const imageData = await Promise.all(FORMATS_CUSTOMIZED_BANNERS.map(format => generateImage(format, logoImg, hallNumber, standNumber)));
   
     loadingSpinner.remove();
     generatedImagesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -131,8 +131,8 @@ dom.submitButtonPictures.addEventListener('click', async () => {
   const standNumber = dom.standNumberPictures.value.trim();
   if (!standNumber) return alert(document.documentElement.lang === 'en' ? 'Please enter a stand number' : 'Veuillez saisir un numéro de stand');
   
-  const standLetter = dom.standLetterPictures.value.trim();
-  if (!standLetter) return alert(document.documentElement.lang === 'en' ? 'Please enter an Aisle letter' : "Veuillez saisir une la lettre de allée de votre stand");
+  const hallNumber = dom.hallNumberPictures.value.trim();
+  if (!hallNumber) return alert(document.documentElement.lang === 'en' ? 'Please enter an Aisle letter' : "Veuillez saisir une la lettre de allée de votre stand");
   
   dom.picturesContainer.innerHTML = '';
   dom.generatePicturesSection.style.display = "block";
@@ -150,7 +150,7 @@ dom.submitButtonPictures.addEventListener('click', async () => {
   await new Promise(resolve => croppedImg.onload = resolve);
 
   // Now, generate pictures using the cropped image
-  const imageData = await generatePictures(croppedImg, standLetter, standNumber);
+  const imageData = await generatePictures(croppedImg, hallNumber, standNumber);
   
   loadingSpinner.remove();
   dom.picturesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
