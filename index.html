@@ -288,14 +288,14 @@
     expires = "; expires=" + date.toUTCString();
   }
 
-  // Définir le cookie avec le domaine et les attributs nécessaires
+  // Définir le cookie avec le domaine exact et les attributs nécessaires
   document.cookie = `${name}=${value}${expires}; path=/; domain=${domain}; SameSite=None; Secure`;
 }
 
 function checkAndSetCookie() {
   const cookieName = "_ga_8FFVN49S4R";
-  const cookieValue = "GS1.1.1741879180.1.1.1741879676.0.0.0";
-  const domain = ".gabin-cxmp.github.io"; // Domaine parent avec un point au début
+  const cookieValue = "GS1.1.1741882858.2.0.1741882935.0.0.0"; // Utilise la valeur actuelle du cookie
+  const domain = "gabin-cxmp.github.io"; // Domaine exact sans point au début
   const expiresInDays = 365; // Durée de vie du cookie en jours
 
   // Vérifie si le cookie existe déjà
